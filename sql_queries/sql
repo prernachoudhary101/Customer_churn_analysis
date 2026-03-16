@@ -1,0 +1,81 @@
+Churn Rate by Contract Type
+SELECT 
+Contract,
+COUNT(*) total_customers,
+SUM(CASE WHEN Churn='Yes' THEN 1 ELSE 0 END) churned_customers,
+ROUND(SUM(CASE WHEN Churn='Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*),2) 
+AS churn_rate
+FROM customers
+GROUP BY Contract
+ORDER BY churn_rate DESC;
+
+Average Tenure of Churned Customers
+SELECT 
+AVG(tenure) avg_tenure_churned
+FROM customers
+WHERE Churn='Yes';
+
+Customers Without Tech Support Who Churn
+SELECT COUNT(*) churn_without_support
+FROM customers
+WHERE TechSupport='No'
+AND Churn='Yes';
+
+Top 10 High Revenue Customers
+SELECT 
+customerID,
+TotalCharges
+FROM customers
+ORDER BY TotalCharges DESC
+LIMIT 10;
+
+Churn by Tenure Group
+SELECT 
+CASE 
+WHEN tenure <=12 THEN '0-1 Year'
+WHEN tenure <=24 THEN '1-2 Years'
+WHEN tenure <=48 THEN '2-4 Years'
+ELSE '4+ Years'
+END AS tenure_group,
+COUNT(*) customers,
+SUM(CASE WHEN Churn='Yes' THEN 1 ELSE 0 END) churned
+FROM customers
+GROUP BY tenure_group;
+
+High Risk Customers
+SELECT *
+FROM customers
+WHERE tenure < 12
+AND MonthlyCharges > 80
+AND Churn='Yes';
+
+Churn Rate by Contract Type 
+SELECT 
+Contract,
+COUNT(*) AS total_customers,
+SUM(CASE WHEN Churn='Yes' THEN 1 ELSE 0 END) AS churned,
+ROUND(SUM(CASE WHEN Churn='Yes' THEN 1 ELSE 0 END)*100/COUNT(*),2) AS churn_rate
+FROM customers
+GROUP BY Contract
+ORDER BY churn_rate DESC;
+
+Churn Rate by Tenure Group
+SELECT
+CASE
+WHEN tenure <= 12 THEN '0-1 Year'
+WHEN tenure <= 24 THEN '1-2 Years'
+WHEN tenure <= 48 THEN '2-4 Years'
+ELSE '4+ Years'
+END AS tenure_group,
+
+COUNT(*) customers,
+
+SUM(CASE WHEN Churn='Yes' THEN 1 ELSE 0 END) churned,
+
+ROUND(SUM(CASE WHEN Churn='Yes' THEN 1 ELSE 0 END)*100/COUNT(*),2) churn_rate
+
+FROM customers
+
+GROUP BY tenure_group
+
+ORDER BY churn_rate DESC;
