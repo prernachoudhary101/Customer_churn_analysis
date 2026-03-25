@@ -1,13 +1,13 @@
-# 📊 Customer Churn Analysis & Prediction
+#  Customer Churn Analysis & Prediction
 
-## 🔍 Overview
+##  Overview
 This project analyzes telecom customer data to identify key drivers of customer churn and build a predictive model to proactively identify high-risk customers.
 
 The analysis combines **Python, SQL, and Power BI** to deliver both technical insights and business recommendations.
 
 ---
 
-## 🛠️ Tools & Technologies
+##  Tools & Technologies
 - Python (Pandas, NumPy, Scikit-learn)
 - SQL (MySQL)
 - Power BI (Dashboarding & Visualization)
@@ -15,22 +15,22 @@ The analysis combines **Python, SQL, and Power BI** to deliver both technical in
 
 ---
 
-## 📁 Dataset
+##  Dataset
 - Telco Customer Churn Dataset
 - ~7,000 customer records
 - 20+ behavioral and demographic features
 
 ---
 
-## 📊 Key Business Insights
-- 📉 Customers with **month-to-month contracts** show the highest churn rate
-- 💰 Customers with **higher monthly charges** are more likely to churn
-- ⏳ Customers with **low tenure (<12 months)** have higher churn probability
-- 🛠️ Customers without **tech support services** churn more frequently
+##  Key Business Insights
+-  Customers with **month-to-month contracts** show the highest churn rate
+-  Customers with **higher monthly charges** are more likely to churn
+-  Customers with **low tenure (<12 months)** have higher churn probability
+-  Customers without **tech support services** churn more frequently
 
 ---
 
-## 🤖 Machine Learning Model
+##  Machine Learning Model
 - Model Used: Logistic Regression  
 - Accuracy: ~82%  
 - Objective: Predict customer churn (Yes/No)
@@ -44,7 +44,7 @@ The analysis combines **Python, SQL, and Power BI** to deliver both technical in
 
 ---
 
-## 📈 SQL Analysis
+##  SQL Analysis
 Performed SQL-based exploratory analysis to:
 - Calculate churn rates across segments
 - Identify high-risk customer groups
@@ -53,19 +53,16 @@ Performed SQL-based exploratory analysis to:
 
 ---
 
-## 📊 Dashboard
+##  Dashboard
 Developed an interactive Power BI dashboard to visualize:
 - Churn trends
 - Customer segments
 - Contract-based churn distribution
 - Revenue impact
 
-📸 Dashboard Preview:
-![Dashboard](images/dashboard.png)
-
 ---
 
-## 🎯 Business Impact
+##  Business Impact
 This project helps businesses:
 - Identify high-risk customers early
 - Improve retention strategies
